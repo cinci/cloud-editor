@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Cloud Editor</title>
+
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+    <script src="http://cdn.jsdelivr.net/ace/1.1.8/min/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="http://cdn.jsdelivr.net/ace/1.1.8/min/ext-language_tools.js" type="text/javascript" charset="utf-8"></script>
+
+    <script src="pageControls.js" type="text/javascript" charset="utf-8"></script>
+    <script src="editorBuilder.js" type="text/javascript" charset="utf-8"></script>
+    <script src="editorManager.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div role="tabpanel">
+
+    <!-- Nav tabs -->
+    <ul id="open-files" class="nav nav-tabs" role="tablist">
+        <li role="presentation" class="active">
+            <a href="#new" aria-controls="new" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-plus"></span>
+            </a>
+        </li>
+        <li role="presentation">
+            <a href="#open" aria-controls="open" role="tab" data-toggle="tab">
+                <span class="glyphicon glyphicon-folder-open"></span>
+            </a>
+        </li>
+    </ul>
+
+    <!-- Tab panes -->
+    <div id="active-editor" class="tab-content">
+
+        <!-- Create file tab content -->
+        <div role="tabpanel" class="tab-pane active" id="new">
+            <div class="control-tab">
+                <div class="input-group">
+                    <span class="input-group-addon" id="filename">Filename</span>
+                    <input type="text" class="form-control new-file-name" placeholder="Filename" aria-describedby="filename">
+                </div>
+                <div class="input-group">
+                    <span class="input-group-addon" id="filetype">Filetype</span>
+                    <select class="form-control new-file-type" aria-describedby="filetype">
+                        <option value="java">Java</option>
+                        <option value="javascript">Javascript</option>
+                        <option value="sql">SQL</option>
+                        <option value="html">HTML</option>
+                        <option value="css">CSS</option>
+                    </select>
+                </div>
+                <div class="btn-group" role="group">
+                    <button type="button" class="btn btn-default" onclick="createNewFile();">Create</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Open file tab content -->
+        <div role="tabpanel" class="tab-pane" id="open">open file</div>
+    </div>
+
+</div>
+</body>
+</html>
